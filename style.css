@@ -719,3 +719,32 @@ body {
     transform: scale(1.15);
     box-shadow: 0 15px 40px rgba(255, 69, 0, 0.7);
 }
+.nav-link {
+  position: relative;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.nav-link.active {
+  background: linear-gradient(45deg, #ff4500, #ff8c00);
+  color: #fff !important;
+  box-shadow: 0 0 18px rgba(255, 69, 0, 0.7);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: #ff4500;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link.active::after {
+  width: 70%;
+}

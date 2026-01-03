@@ -69,6 +69,24 @@ backToTop.addEventListener('click', () => {
 function enroll(course) {
     alert(`Enrolled in ${course.toUpperCase()} course! Next: payment page.`);
 }
+// NAVBAR ACTIVE LINK HANDLING
+const navLinks = document.querySelectorAll('.nav-link');
+
+function setActiveLinkByHash() {
+  const hash = window.location.hash || '#home';
+  const section = hash.replace('#', '');
+  navLinks.forEach(link => {
+    if (link.dataset.section === section) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
+// Home page pe scroll se bhi update
+window.addEventListener('hashchange', setActiveLinkByHash);
+window.addEventListener('load', setActiveLinkByHash);
 
 function enroll(course) {
     localStorage.setItem('enrolledCourse', course);
