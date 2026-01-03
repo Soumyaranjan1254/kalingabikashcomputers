@@ -66,4 +66,12 @@ window.addEventListener('scroll', () => {
 backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+function enroll(course) {
+    alert(`Enrolled in ${course.toUpperCase()} course! Next: payment page.`);
+}
+
+function enroll(course) {
+    localStorage.setItem('enrolledCourse', course);
+    window.open('ThankYou.html', '_blank');
+}
 

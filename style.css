@@ -663,3 +663,59 @@ body {
     color: #00b4ff;
     font-size: 1.2rem;
 }
+.course-card {
+    background: rgba(139, 69, 19, 0.3);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 140, 0, 0.6);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.7), transparent);
+    transition: left 0.6s;
+}
+
+.course-card:hover::before {
+    left: 100%;
+}
+
+.course-card:hover {
+    transform: translateY(-20px) scale(1.05);
+    box-shadow: 
+        0 35px 70px rgba(255, 69, 0, 0.5),
+        0 0 50px rgba(255, 140, 0, 0.8),
+        inset 0 0 40px rgba(255, 165, 0, 0.4);
+}
+
+.course-card h3 {
+    color: #ff4500;
+    font-size: 1.8rem;
+    text-shadow: 0 0 20px rgba(255, 69, 0, 0.9);
+}
+
+.course-card:hover h3 {
+    text-shadow: 0 0 40px #ff4500;
+}
+
+.enroll-btn {
+    background: linear-gradient(45deg, #ff4500, #ff8c00);
+    border: none;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 8px 25px rgba(255, 69, 0, 0.5);
+}
+
+.enroll-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 15px 40px rgba(255, 69, 0, 0.7);
+}

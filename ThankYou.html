@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Enrolled - KBC</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #8B4513, #FF8C00, #FF4500);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .success-card {
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(25px);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(255,69,0,0.4);
+            max-width: 450px;
+            width: 90%;
+            border: 2px solid rgba(255,140,0,0.7);
+        }
+        .checkmark { 
+            font-size: 5rem; 
+            color: #FFD700; 
+            margin-bottom: 1.5rem; 
+            animation: bounce 1.5s ease; 
+        }
+        h1 { 
+            font-size: 2.2rem; 
+            margin-bottom: 1rem; 
+            color: #FFD700; 
+            text-shadow: 0 0 20px #FF4500; 
+        }
+        #courseMsg { 
+            font-size: 1.4rem; 
+            margin-bottom: 1.5rem; 
+            background: rgba(255,140,0,0.2);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+        .back-btn {
+            background: linear-gradient(45deg, #FF4500, #FF8C00);
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(255,69,0,0.5);
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .back-btn:hover {
+            transform: translateY(-3px) scale(1.08);
+            box-shadow: 0 15px 35px rgba(255,69,0,0.7);
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-card">
+        <div class="checkmark">✅</div>
+        <h1>Enrollment Confirmed!</h1>
+        <p id="courseMsg">Thank you for joining <strong id="courseName">KBC Course</strong>!</p>
+        <p>Course details sent to your email. Welcome aboard 🚀</p>
+        <a href="courses.html" class="back-btn">← Continue Learning</a>
+    </div>
+    <script>
+        const course = localStorage.getItem('enrolledCourse') || 'KBC Course';
+        document.getElementById('courseName').textContent = course.toUpperCase();
+        localStorage.removeItem('enrolledCourse');
+    </script>
+</body>
+</html>
