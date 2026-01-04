@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify Certificate</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff6b6b, #4ecdc4);
+            font-family: Arial;
+            padding: 50px;
+            text-align: center;
+        }
+        .form-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 400px;
+            margin: auto;
+        }
+        input {
+            width: 90%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        button:hover { background: #cc0000; }
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            background: #d4edda;
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-box">
+        <h1 style="color:#ff4444;">🎓 Certificate Verify</h1>
+        
+        <input type="text" id="name" placeholder="Please Enter Your Name">
+        <input type="text" id="regno" placeholder="Registration Number">
+        <input type="date" id="dob">
+        
+        <br>
+        <button onclick="verifyKar()">Verify Certificate ✅</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+    function verifyKar() {
+        let name = document.getElementById('name').value;
+        let regno = document.getElementById('regno').value;
+        let dob = document.getElementById('dob').value;
+        
+        if(name && regno && dob) {
+            document.getElementById('result').innerHTML = 
+            `<strong style="color:#28a745;">✓ Verified Successfully!</strong><br>
+            <strong>Name:</strong> ${name}<br>
+            <strong>Reg No:</strong> ${regno}<br>
+            <strong>Date of Birth:</strong> ${dob}`;
+        } else {
+            alert('Please fill all fields!');
+        }
+    }
+    </script>
+</body>
+</html>

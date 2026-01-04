@@ -92,4 +92,7 @@ function enroll(course) {
     localStorage.setItem('enrolledCourse', course);
     window.open('ThankYou.html', '_blank');
 }
+document.getElementById('verifyBtn').onclick = function(){
+    window.open('verify.html','_blank','width=500,height=600');
+};
 
