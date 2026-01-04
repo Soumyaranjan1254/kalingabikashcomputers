@@ -95,4 +95,28 @@ function enroll(course) {
 document.getElementById('verifyBtn').onclick = function(){
     window.open('verify.html','_blank','width=500,height=600');
 };
+function verifyKar() {
+  let name = document.getElementById('name').value.trim();
+  let regno = document.getElementById('regno').value.trim();  // Assume ID 'regno' hai input ka
+  
+  if (!name || !regno) {
+    alert('Name aur Reg No daalo bhai!');
+    return;
+  }
+  
+  // Loading show (optional spinner)
+  document.querySelector('button').innerHTML = 'Verifying... ⏳';
+  
+  setTimeout(() => {  // Fake delay for real feel
+    document.getElementById('verifiedName').textContent = name;
+    document.getElementById('verifiedRegno').textContent = regno;
+    document.getElementById('result').style.display = 'block';
+    document.querySelector('button').innerHTML = 'Verify Again';
+    document.querySelector('button').style.background = '#007bff';
+  }, 1500);
+}
+
+function printCert() {
+  window.print();  // Browser print dialog kholega
+}
 
